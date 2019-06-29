@@ -52,6 +52,7 @@
     document.addEventListener('mouseup', onMouseUp);
   });
 
+
   var shopElement = document.querySelector('.setup-artifacts-shop');
   var draggedItem = null;
 
