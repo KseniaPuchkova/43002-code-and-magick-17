@@ -4,7 +4,7 @@
   var userDialog = document.querySelector('.setup');
   var wizardCoat = userDialog.querySelector('.wizard-coat');
   var wizardEyes = userDialog.querySelector('.wizard-eyes');
-  var wizardFireballColor = userDialog.querySelector('.setup-fireball-wrap');
+  var wizardFireball = userDialog.querySelector('.setup-fireball-wrap');
   var inputCoatColor = userDialog.querySelector('input[name="coat-color"]');
   var inputEyesColor = userDialog.querySelector('input[name="eyes-color"]');
   var inputFireballColor = userDialog.querySelector('input[name="fireball-color"]');
@@ -12,34 +12,36 @@
   var eyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
   var fireballColors = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
-  var seputWizardCoat = function () {
-    var colorWizardCoatNew = window.random.getRandomValue(coatColors);
-    wizardCoat.style.fill = colorWizardCoatNew;
-    inputCoatColor.value = colorWizardCoatNew;
-  };
-
   var setupWizardEyes = function () {
     var colorWizardEyesNew = window.random.getRandomValue(eyesColors);
     wizardEyes.style.fill = colorWizardEyesNew;
     inputEyesColor.value = colorWizardEyesNew;
+    window.wizard.eyesChangeHandler(colorWizardEyesNew);
   };
 
-  var setupWizardFireballColor = function () {
+  var seputWizardCoat = function () {
+    var colorWizardCoatNew = window.random.getRandomValue(coatColors);
+    wizardCoat.style.fill = colorWizardCoatNew;
+    inputCoatColor.value = colorWizardCoatNew;
+    window.wizard.coatChangeHandler(colorWizardCoatNew);
+  };
+
+  var setupWizardFireball = function () {
     var fireballColorNew = window.random.getRandomValue(fireballColors);
-    wizardFireballColor.style.background = fireballColorNew;
+    wizardFireball.style.background = fireballColorNew;
     inputFireballColor.value = fireballColorNew;
   };
-
-  wizardCoat.addEventListener('click', function () {
-    seputWizardCoat();
-  });
 
   wizardEyes.addEventListener('click', function () {
     setupWizardEyes();
   });
 
-  wizardFireballColor.addEventListener('click', function () {
-    setupWizardFireballColor();
+  wizardCoat.addEventListener('click', function () {
+    seputWizardCoat();
+  });
+
+  wizardFireball.addEventListener('click', function () {
+    setupWizardFireball();
   });
 
 })();
