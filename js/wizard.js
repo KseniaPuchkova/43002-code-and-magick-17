@@ -32,16 +32,8 @@
     inputFireballColor.value = fireballColorNew;
   };
 
-  wizardEyes.addEventListener('click', function () {
-    setupWizardEyes();
-  });
-
-  wizardCoat.addEventListener('click', function () {
-    seputWizardCoat();
-  });
-
-  wizardFireball.addEventListener('click', function () {
-    setupWizardFireball();
-  });
+  wizardEyes.addEventListener('click', setupWizardEyes);
+  wizardCoat.addEventListener('click', seputWizardCoat);
+  wizardFireball.addEventListener('click', setupWizardFireball);
 
 })();
