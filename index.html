@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
   <header>
     <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62
         86">
@@ -78,7 +77,6 @@
 
         <span class="setup-close">&times;</span>
       </div>
-
 
       <div class="setup-artifacts-shop">
         <div class="setup-artifacts-cell"><img src="img/icon-star.png" alt="Star" width="65" height="50" draggable="true">
@@ -176,29 +174,27 @@
     var fireballSize = 22;
     var wizardSpeed = 3;
     var wizardWidth = 70;
-
     var getFireballSpeed = function(left) {
       if (left) {
         return true ? 5 : 2;
       }
     };
-
     var getWizardHeight = function() {
       return 1.337 * wizardWidth;
     };
-
     var getWizardX = function(width) {
       return (width - wizardWidth) / 2;
     };
-
     var getWizardY = function(height) {
       return height / 3 - getWizardHeight();
     };
+
   </script>
 
   <script src="js/util.js"></script>
   <script src="js/random.js"></script>
   <script src="js/backend.js"></script>
+  <script src="js/data-uri.js"></script>
   <script src="js/debounce.js"></script>
   <script src="js/avatar.js"></script>
   <script src="js/open-close-popup.js"></script>

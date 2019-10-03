@@ -1,6 +1,7 @@
 'use strict';
 
 (function () {
+  var SHOW_WIZARDS_NUMBER = 4;
   var similar = document.querySelector('.setup-similar');
   var similarList = document.querySelector('.setup-similar-list');
   var wizardTemplate = document.querySelector('#similar-wizard-template');
@@ -16,11 +17,10 @@
   };
 
   window.render = function (data) {
-    var takeNumber = data.length > 4 ? 4 : data.length;
     similarList.innerHTML = '';
-    for (var i = 0; i < takeNumber; i++) {
-      similarList.appendChild(renderWizard(data[i]));
-    }
+    data.slice(0, SHOW_WIZARDS_NUMBER).forEach(function (wizard) {
+      similarList.appendChild(renderWizard(wizard));
+    });
     similar.classList.remove('hidden');
   };
 
@@ -42,5 +42,4 @@
   };
 
   window.backend.load(window.successHandler, window.errorHandler);
-
 })();
